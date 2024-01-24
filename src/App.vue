@@ -20,9 +20,6 @@ export default {
         getApiMovies(){
             axios.get('https://api.themoviedb.org/3/search/movie', {
             params: {
-                include_adult: false,
-                language: 'en-US',
-                page: 1,
                 query:this.store.searchText.length > 0 ? this.store.searchText : null,
             },
             headers: {
@@ -30,7 +27,8 @@ export default {
                 Authorization: `Bearer ${store.authBearer}`
             }
         }).then((response)=>{
-            console.log(response)
+            this.store.movieList = response.data.results;
+            console.log('lista film',this.store.movieList);
         })
         }
     },

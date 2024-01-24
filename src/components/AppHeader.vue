@@ -15,9 +15,10 @@ export default {
 <template>
     <header>
         <form @submit.prevent="$emit('searched')">
-            <input type="text" v-model="store.searchText">
+            <input type="text" v-model="store.searchText"
+                placeholder="cerca un film">
             <button>
-                button
+                cerca
             </button>
         </form>
     </header>
