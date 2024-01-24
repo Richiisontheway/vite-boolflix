@@ -39,7 +39,6 @@ export default {
 </script>
 
 <template>
-
     <AppHeader @searched="getApiMovies()"/>
 
     <AppMain />
