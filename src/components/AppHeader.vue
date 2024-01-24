@@ -1,8 +1,9 @@
 <script>
+import { store } from '../store';
 export default {
     data() {
         return {
-
+            store
         };
     },
     methods: {
@@ -13,7 +14,12 @@ export default {
 
 <template>
     <header>
-        HEADER
+        <form @submit.prevent="$emit('searched')">
+            <input type="text" v-model="store.searchText">
+            <button>
+                button
+            </button>
+        </form>
     </header>
 </template>
 
