@@ -1,14 +1,16 @@
 <script>
 import { store } from '../store';
-import singleWatcher from './singleWatcher.vue';
+import singleMovie from './singleMovie.vue';
 export default {
     data() {
         return {
             store,
         };
     },
-    components:{
-        singleWatcher
+    components: {
+
+        singleMovie
+
     },
     methods: {
 
@@ -19,7 +21,7 @@ export default {
 <template>
     <main>
         <div>
-            <singleWatcher v-for="(elem,i) in store.movieList"
+            <singleMovie v-for="(elem,i) in store.movieList"
             :key="i"
             :movie="elem" />
         </div>
