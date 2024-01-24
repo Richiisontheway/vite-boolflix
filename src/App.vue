@@ -18,7 +18,7 @@ export default {
     },  
     methods: {
         getApiMovies(){
-            axios.get('https://api.themoviedb.org/3/search/movie', {
+            axios.get('https://api.themoviedb.org/3/'+ store.movieUrl, {
             params: {
                 query:this.store.searchText.length > 0 ? this.store.searchText : null,
             },
@@ -26,20 +26,35 @@ export default {
                 accept: 'application/json',
                 Authorization: `Bearer ${store.authBearer}`
             }
-        }).then((response)=>{
-            this.store.movieList = response.data.results;
-            console.log('lista film',this.store.movieList);
-        })
+            }).then((response)=>{
+                this.store.movieList = response.data.results;
+                console.log('lista film',this.store.movieList);
+            })
+        },
+        getApiSeries(){
+            axios.get('https://api.themoviedb.org/3/'+ store.seriesUrl, {
+            params: {
+                query:this.store.searchText.length > 0 ? this.store.searchText : null,
+            },
+            headers: {
+                accept: 'application/json',
+                Authorization: `Bearer ${store.authBearer}`
+            }
+            }).then((response)=>{
+                this.store.serieTvList = response.data.results;
+                console.log('lista serietv',this.store.serieTvList);
+            })
         }
     },
-    created (){
+    mounted (){
         this.getApiMovies();
+        this.getApiSeries();
     }
 }
 </script>
 
 <template>
-    <AppHeader @searched="getApiMovies()"/>
+    <AppHeader @searched="getApiMovies(),getApiSeries()"/>
 
     <AppMain />
 
