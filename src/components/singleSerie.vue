@@ -15,19 +15,37 @@ export default {
             }
             if(this.serie.original_language == 'ja'){
                 this.serie.original_language = 'jp'
+                
             }
             if(this.serie.original_language == 'ko'){
                 this.serie.original_language = 'kr'
+                
             }
             if(this.serie.original_language == 'zh'){
                 this.serie.original_language = 'cn'
+                
             }
+            //return this.serie.original_language
+
+            
         },
+        changeVote(){
+            let number = parseInt(Math.round(this.serie.vote_average) / 2)
+            //console.log('voteSerie',number);
+            return number
+        }
     },
     props:{
         serie:Object,
     },
-    
+    mounted(){
+        this.flagCodeChange();
+        this.changeVote()
+    },
+    updated(){
+        this.flagCodeChange();
+        this.changeVote()
+    }
 }
 </script>
 <template>
@@ -46,6 +64,11 @@ export default {
             <li>
                 {{ serie.vote_average }}
             </li>
+            <li v-for="(elem,i) in 5" class="fa-star"
+            :class="{
+                'fa-regular' : changeVote() <= i,
+                'fa-solid' : changeVote() > i
+            }"></li>
             
         </ul>
     </div>
