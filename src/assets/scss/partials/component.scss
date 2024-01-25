@@ -1,13 +1,36 @@
 
 // Import all of Bootstrap's CSS
 @import "bootstrap/scss/bootstrap";
-
+ul{
+    list-style: none;
+}
 .boolflix--card{
     position: relative;
-    width: 400px;
-    .boolflix--descrpition{
+    .boolflix--img{
+        width: 400px;
+        height: 500px;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    
+    .boolflix--description{
         position: absolute;
         bottom: 0;
         opacity: 0;
+        color: white;
     }
+    &:hover .boolflix--img{
+        opacity: 0.6;
+    }
+    &:hover .boolflix--description{
+        opacity: 1;
+        background-color: dimgray;
+        opacity: 0.8;
+    }
+    
+}
+.special{
+    color: orange;
 }

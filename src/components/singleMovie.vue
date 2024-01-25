@@ -49,21 +49,25 @@ export default {
         </div>
         <div class="boolflix--description">
             <ul>
-                <li>{{ movie.title }}</li>
-                <li>{{ movie.original_title }}</li>
+                <li>Nome:{{ movie.title }}</li>
+                <li>Nome originale:{{ movie.original_title }}</li>
                 <li>
-                    <h5>
+                    <div>
+                        Lingua:
                         <img :src="'https://flagcdn.com/16x12/'+ movie.original_language +'.png'" alt="ciao">
-                    </h5>
+                    </div>
                 </li>
                 <li>
-                    {{ movie.vote_average }}
+                    Valutazione:{{ movie.vote_average }}
                 </li>
-                <li v-for="(elem,i) in 5" class="fa-star"
+                <li v-for="(elem,i) in 5" class="fa-star special"
                 :class="{
                     'fa-regular' : changeVote() <= i,
                     'fa-solid' : changeVote() > i
                 }">
+                </li>
+                <li>
+                    Sintassi:{{ movie.overview }}
                 </li>
             </ul>
         </div>

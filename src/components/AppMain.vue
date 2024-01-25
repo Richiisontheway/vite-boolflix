@@ -40,15 +40,16 @@ export default {
         </section>
         <section>
             <div>
+                seriess
+            </div>
+            <div>
                 <h>serie</h>
-                <div class="d-block">
-                    <div class="boolflix--container">
+                <div class="boolflix--container">
 
-                        <singleSerie v-for="(episode,a) in store.serieTvList"
-                        :key="a"
-                        :serie="episode"/>
+                    <singleSerie v-for="(episode,a) in store.serieTvList"
+                    :key="a"
+                    :serie="episode"/>
 
-                    </div>
                 </div>
             </div>
         </section>
