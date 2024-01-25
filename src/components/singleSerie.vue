@@ -27,13 +27,14 @@ export default {
     props:{
         serie:Object,
     },
-    beforeUpdate(){
-        this.flagCodeChange();
-    }
+    
 }
 </script>
 <template>
     <div>
+        <div>
+            <img :src="'https://image.tmdb.org/t/p/w342'+serie.poster_path" alt="">
+        </div>
         <ul>
             <li>{{ serie.name }}</li>
             <li>{{ serie.original_name }}</li>
@@ -42,7 +43,9 @@ export default {
                     <img :src="'https://flagcdn.com/16x12/'+ serie.original_language +'.png'" alt="ciao">
                 </h5>
             </li>
-            <li>{{ serie.vote_average }}</li>
+            <li>
+                {{ serie.vote_average }}
+            </li>
             
         </ul>
     </div>

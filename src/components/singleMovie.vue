@@ -34,6 +34,9 @@ export default {
 </script>
 <template>
     <div>
+        <div>
+            <img :src="'https://image.tmdb.org/t/p/w342'+movie.poster_path" alt="">
+        </div>
         <ul>
             <li>{{ movie.title }}</li>
             <li>{{ movie.original_title }}</li>
