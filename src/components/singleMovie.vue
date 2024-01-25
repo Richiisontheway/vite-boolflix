@@ -43,27 +43,35 @@ export default {
 }
 </script>
 <template>
-    <div>
-        <div>
-            <img :src="'https://image.tmdb.org/t/p/w342'+ movie.poster_path" alt="">
+    <div class="boolflix--card">
+        <div class="boolflix--img">
+            <img :src="'https://image.tmdb.org/t/p/w342'+ movie.poster_path" alt="film non disponibile">
         </div>
-        <ul>
-            <li>{{ movie.title }}</li>
-            <li>{{ movie.original_title }}</li>
-            <li>
-                <h5>
-                    <img :src="'https://flagcdn.com/16x12/'+ movie.original_language +'.png'" alt="ciao">
-                </h5>
-            </li>
-            <li>
-                {{ movie.vote_average }}
-            </li>
-            <li v-for="(elem,i) in 5" class="fa-star"
-            :class="{
-                'fa-regular' : changeVote() <= i,
-                'fa-solid' : changeVote() > i
-            }"></li>
-            
-        </ul>
+        <div class="boolflix--description">
+            <ul>
+                <li>{{ movie.title }}</li>
+                <li>{{ movie.original_title }}</li>
+                <li>
+                    <h5>
+                        <img :src="'https://flagcdn.com/16x12/'+ movie.original_language +'.png'" alt="ciao">
+                    </h5>
+                </li>
+                <li>
+                    {{ movie.vote_average }}
+                </li>
+                <li v-for="(elem,i) in 5" class="fa-star"
+                :class="{
+                    'fa-regular' : changeVote() <= i,
+                    'fa-solid' : changeVote() > i
+                }">
+                </li>
+            </ul>
+        </div>
     </div>
+
 </template>
+
+<style lang="scss">
+    @use '../assets/scss/partials/component.scss' as *
+
+</style>

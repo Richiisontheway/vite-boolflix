@@ -2,3 +2,21 @@
 @use "partials/mixins.scss" as *;
 // Import all of Bootstrap's CSS
 @import "bootstrap/scss/bootstrap";
+
+main{
+    background-color: DimGray;
+    height: 90vh;
+    overflow-y: scroll;
+    section{
+        margin-left: 20px;
+        
+
+        h2{
+            color: white;
+            font-weight: bolder;
+        }
+        .boolflix--container{
+            display: flex;
+        }
+    }
+}

@@ -22,24 +22,40 @@ export default {
 
 <template>
     <main>
-        <div>
-            <h3>film</h3>
+        <section>
+
             <div>
-            <singleMovie v-for="(elem,i) in store.movieList"
-            :key="i"
-            :movie="elem" />
+                <h2>
+                    Film
+                </h2>
+                <div class="boolflix--container">
+
+                    <singleMovie v-for="(elem,i) in store.movieList"
+                    :key="i"
+                    :movie="elem" />
+
+                </div>
             </div>
-        </div>
-        <div>
-            <h3>serie</h3>
+
+        </section>
+        <section>
             <div>
-            <singleSerie v-for="(episode,a) in store.serieTvList"
-            :key="a"
-            :serie="episode"/>
+                <h>serie</h>
+                <div class="d-block">
+                    <div class="boolflix--container">
+
+                        <singleSerie v-for="(episode,a) in store.serieTvList"
+                        :key="a"
+                        :serie="episode"/>
+
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
     </main>
 </template>
 
 <style lang="scss" scoped>
+    @use '../assets/scss/main.scss' as *;
+
 </style>

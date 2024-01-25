@@ -51,7 +51,7 @@ export default {
 <template>
     <div>
         <div>
-            <img :src="'https://image.tmdb.org/t/p/w342'+serie.poster_path" alt="">
+            <img :src="'https://image.tmdb.org/t/p/w342'+serie.poster_path" alt="film non disponibile">
         </div>
         <ul>
             <li>{{ serie.name }}</li>
@@ -73,3 +73,6 @@ export default {
         </ul>
     </div>
 </template>
+<style lang="scss">
+    @use '../assets/scss/partials/component.scss' as *
+</style>

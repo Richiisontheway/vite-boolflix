@@ -1,0 +1,13 @@
+
+// Import all of Bootstrap's CSS
+@import "bootstrap/scss/bootstrap";
+
+.boolflix--card{
+    position: relative;
+    width: 400px;
+    .boolflix--descrpition{
+        position: absolute;
+        bottom: 0;
+        opacity: 0;
+    }
+}
