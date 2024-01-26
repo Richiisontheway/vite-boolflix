@@ -49,28 +49,32 @@ export default {
 }
 </script>
 <template>
-    <div>
-        <div>
+    <div class="boolflix--card">
+        <div class="boolflix--img">
             <img :src="'https://image.tmdb.org/t/p/w342'+serie.poster_path" alt="film non disponibile">
         </div>
-        <ul>
-            <li>{{ serie.name }}</li>
-            <li>{{ serie.original_name }}</li>
-            <li>
-                <h5>
-                    <img :src="'https://flagcdn.com/16x12/'+ serie.original_language +'.png'" alt="ciao">
-                </h5>
+        <div class="boolflix--description">
+            <ul >
+                <li>Nome:{{ serie.name }}</li>
+                <li>Nome originale:{{ serie.original_name }}</li>
+                <li>
+                    <h5>
+                        Lingua:
+                        <img :src="'https://flagcdn.com/16x12/'+ serie.original_language +'.png'" alt="ciao">
+                    </h5>
+                </li>
+                <li>
+                    Valutazione:{{ serie.vote_average }}
+                </li>
+                <li v-for="(elem,i) in 5" class="fa-star"
+                :class="{
+                    'fa-regular' : changeVote() <= i,
+                    'fa-solid' : changeVote() > i
+                }">
             </li>
-            <li>
-                {{ serie.vote_average }}
-            </li>
-            <li v-for="(elem,i) in 5" class="fa-star"
-            :class="{
-                'fa-regular' : changeVote() <= i,
-                'fa-solid' : changeVote() > i
-            }"></li>
             
-        </ul>
+            </ul>
+        </div>
     </div>
 </template>
 <style lang="scss">
