@@ -24,33 +24,28 @@ export default {
     <main>
         <section>
 
-            <div>
-                <h2>
-                    Film
-                </h2>
-                <div class="boolflix--container">
+            <h2>
+                Film
+            </h2>
+            <div class="boolflix--container">
 
-                    <singleMovie v-for="(elem,i) in store.movieList"
-                    :key="i"
-                    :movie="elem" />
+                <singleMovie v-for="(elem,i) in store.movieList"
+                :key="i"
+                :movie="elem" />
 
-                </div>
             </div>
 
         </section>
         <section>
-            <div>
-                seriess
-            </div>
-            <div>
-                <h>serie</h>
-                <div class="boolflix--container">
+            <h2>
+                Serie
+            </h2>              
+            <div class="boolflix--container">
 
-                    <singleSerie v-for="(episode,a) in store.serieTvList"
-                    :key="a"
-                    :serie="episode"/>
+                <singleSerie v-for="(episode,a) in store.serieTvList"
+                :key="a"
+                :serie="episode"/>
 
-                </div>
             </div>
         </section>
     </main>

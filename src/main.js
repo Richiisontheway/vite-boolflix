@@ -2,18 +2,19 @@ import { createApp } from 'vue';
 import App from './App.vue';
 // Import all of Bootstrap's JS
 import * as bootstrap from 'bootstrap';
-// import Swiper JS core version + nav,modulation modules
-import Swiper from 'swiper';
-import { Navigation, Pagination } from 'swiper/modules';
-
+// import Swiper JS with all modules
+import Swiper from 'swiper/bundle';
 // import Swiper styles
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import 'swiper/css/bundle';
 
-const swiper = new Swiper('.swiper');
-    //configurazione swiper user modules
-    modules: [Navigation,Pagination],
+//init swiper
+const swiper = new Swiper('.swiper', {
+    a11y: {
+        prevSlideMessage: 'Previous slide',
+        nextSlideMessage: 'Next slide',
+    },
+});
+console.log(swiper)
     
 
 createApp(App).mount('#app')
