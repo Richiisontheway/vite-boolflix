@@ -49,7 +49,7 @@ export default {
 }
 </script>
 <template>
-    <div class="boolflix--card">
+    <div class="boolflix--card swiper-slide">
         <div class="boolflix--img">
             <img :src="'https://image.tmdb.org/t/p/w342'+ serie.poster_path" alt="film non disponibile">
         </div>

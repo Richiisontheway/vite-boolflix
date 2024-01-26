@@ -14,8 +14,11 @@ main{
             color: white;
             font-weight: bolder;
         }
-        .boolflix--container{
-            display: flex;
+        .swiper-wrapper{
+            width: 400px;
+            .boolflix--container{
+                display: flex;
+            }
         }
     }
 }

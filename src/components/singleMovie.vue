@@ -43,7 +43,7 @@ export default {
 }
 </script>
 <template>
-    <div class="boolflix--card">
+    <div class="swiper-slide boolflix--card">
         <div class="boolflix--img">
             <img :src="'https://image.tmdb.org/t/p/w342'+ movie.poster_path" alt="film non disponibile">
         </div>
@@ -71,8 +71,8 @@ export default {
                 </li>
             </ul>
         </div>
-    </div>
 
+    </div>
 </template>
 
 <style lang="scss">
