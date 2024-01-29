@@ -1,9 +1,4 @@
 <script>
-const swiper = new Swiper('.boolflix--container', {
-    slidesPerView: 3,
-    spaceBetween: 30,
-});
-console.log(swiper)
 import { store } from '../store';
 import singleMovie from './singleMovie.vue';
 import singleSerie from './singleSerie.vue';
@@ -24,13 +19,19 @@ export default {
         singleSerie,
     },
     methods: {
-        
+        swiper(){
+            const swiper = new Swiper('.boolflix--container', {
+                slidesPerView: 3,
+                spaceBetween: 30,
+            });
+            console.log(swiper)
+        }
     },
     mounted(){
-        this.swiper
+        this.swiper()
     },
     updated(){
-        this.swiper
+        this.swiper()
     }
     
 }
